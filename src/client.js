@@ -1,4 +1,4 @@
-const socket = io("https://chatter-box-server.herokuapp.com/");
+const socket = io();
 
 var passname;
 
