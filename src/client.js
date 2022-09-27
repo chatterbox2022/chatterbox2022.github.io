@@ -1,5 +1,3 @@
-const {io} = require("socket.io-client");
-
 const socket = io("https://chatter-box-server.herokuapp.com/");
 
 var passname;
