@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" class="min-h-screen">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatter Box</title>
+    <link href="../dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="../src/deco.css">
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="../src/index.js"></script>
+    <script src="../src/client.js"></script>
+</head>
+<body class="min-h-screen">
+    <div id="startup" class="main flex flex-col lg:flex-row justify-start items-center min-h-screen w-full bg-lime-400">
+        <div class="videocontainer flex justify-center items-center lg:min-h-screen w-full lg:w-1/2 bg-black ">
+            <video autoplay class="w-full md:w-2/3 lg:w-1/2" muted loop>
+                <source src="../media/logo-vid.mp4">
+            </video>
+        </div>
+        <div class="lil w-1/6 min-h-screen hidden lg:block"> </div>
+        <div class="login font-paytone px-5 w-full text-center lg:text-left py-12 lg:py-0 lg:w-1/3">
+            <div id="login" class="text-3xl"></div>
+            <div class="form py-10">
+                <input id="nameinput" type="text" placeholder="Enter your name" class="bg-lime-400 border-2 border-black p-1 rounded-sm outline-none focus:bg-white placeholder:text-lime-300 duration-300">
+            </div>
+            <div class="button">
+                <button class="border-2 border-black bg-black text-lime-400 p-1 hover:bg-transparent hover:text-black duration-300 rounded-sm" onclick="clicked()">Submit!</button>
+            </div>
+        </div>
+    </div>
+    <div id="app" class="app flex justify-center items-center lg:p-10 bg-black min-h-screen w-full hidden">
+        <div class="greenlays flex justify-center items-center flex-col rounded-md bg-lime-400 p-2 h-5/6 w-full lg:w-11/12">
+            <div class="wraip w-full flex justify-start items-center">
+                <div class="button w-1/2 md:w-1/6 lg:w-1/12 font-DM rounded-md" onclick="back()">
+                    <button class="w-full border-2 border-black rounded-md hover:bg-black hover:text-lime-400 duration-300"> < Back </button>
+                </div>
+            </div>
+            <div class="heading font-paytone w-full text-center text-3xl">
+                CHATTER BOX
+            </div>
+            <div id="chatsection" class="chatsection overflow-y-scroll flex flex-col justify-end p-2 w-full lg:w-5/6 border-2 border-black rounded-md">
+                <div class="wrapper flex justify-start w-full">
+                    <div class="elem w-1/3 rounded-md bg-white bg-opacity-70 font-DM">
+                        <div class="name p-1 font-medium">
+                            Bheem
+                        </div>
+                        <div class="message flex justify-start items-center p-1">
+                            <div class="img">
+                                <img src="../media/turn-down.png" class="w-4" alt="">
+                            </div>
+                            <div class="text">Hi Raju kaise ho?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomsection flex justify-between items-center w-full lg:w-5/6 py-1 font-DM">
+                <input id="message" type="text" placeholder="Enter Message" class="w-11/12 p-1 rounded-md bg-white bg-opacity-50 placeholder:text-gray-500 border-black border-2">
+                <button class="w-1/12 border-black duration-300 hover:bg-black hover:text-lime-400 border-2 rounded-md p-1" onclick="messageclick()">></button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

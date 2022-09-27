@@ -1,0 +1,7 @@
+.lil{
+    background: linear-gradient(to top left, rgb(163 230 53),rgb(163 230 53) 50%,black 50%,black);
+}
+
+.chatsection{
+    min-height: 70vh;
+}
